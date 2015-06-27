@@ -1,0 +1,7 @@
+/coverage/
+/doc/
+/gem.deps.rb.lock
+/pkg/
+/tmp/
+/_yardoc/
+/.yardoc
