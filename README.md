@@ -1,6 +1,28 @@
 # Elixir.rb
 
-The Elixir standard library implemented in Ruby. This is currently just a code spike that implements parts of Enum and Stream.
+The [Elixir](http://elixir-lang.org) standard library in [Ruby](https://www.ruby-lang.org)!
+
+So far there are partial implementations of the following Elixir modules:
+
+* Agent
+* Atom
+* Base
+* Dict
+* Enum
+* File
+* Float
+* Integer
+* List
+* OptionParser
+* Path
+* Range
+* Set
+* Stream
+* String
+* System
+* Task
+* Tuple
+* Version
 
 ## Installation
 
@@ -8,7 +30,9 @@ The Elixir standard library implemented in Ruby. This is currently just a code s
 gem install elixir.rb
 ```
 
-## Usage
+## Examples
+
+[Stream.unfold/2](http://elixir-lang.org/docs/stable/elixir/Stream.html#unfold/2)
 
 ```ruby
 require 'elixir/stream'
@@ -19,18 +43,40 @@ Fib = Stream.unfold [0, 1] do |a, b|
   [a, [b, a + b]]
 end
 
+Fib.size
+#=> Infinity
+
 Fib.take 5
 #=> [0, 1, 1, 2, 3]
 ```
 
+[Agent](http://elixir-lang.org/docs/stable/elixir/Agent.html) and [Task](http://elixir-lang.org/docs/stable/elixir/Task.html)
+
 ```ruby
-require 'elixir/enum'
+require 'elixir/agent'
+require 'elixir/task'
 
 include Elixir
 
-Enum.filter [1, 2, 3], &:odd?
-#=> [1, 3]
+status, agent = Agent.start { 0 }
+#=> [:ok, #<Concurrent::Atomic:...>]
+
+Agent.cast(agent) { |value| value + 42 }
+#=> :ok
+
+Agent.get(agent, &:next)
+#=> 43
+
+task = Task.async ->{ sleep 0.5; Agent.get(agent, &:itself) }
+#<Concurrent::IVar:...>
+
+Task.await(task)
+#=> 42
 ```
+
+## Requirements
+
+Ruby 2.2+
 
 ## Development
 

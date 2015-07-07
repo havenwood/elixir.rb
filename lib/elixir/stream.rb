@@ -1,5 +1,7 @@
 module Elixir
   module Stream
+    INFINITY = ::Float::INFINITY
+
     module_function
 
     def cycle collection
@@ -7,8 +9,8 @@ module Elixir
     end
 
     def interval milliseconds
-      Enumerator.new Float::INFINITY do |yielder|
-        0.upto Float::INFINITY do |n|
+      Enumerator.new INFINITY do |yielder|
+        0.upto INFINITY do |n|
           sleep milliseconds.fdiv 1000
           yielder << n
         end
@@ -16,7 +18,7 @@ module Elixir
     end
 
     def iterate value
-      Enumerator.new Float::INFINITY do |yielder|
+      Enumerator.new INFINITY do |yielder|
         loop do
           yielder << value
           value = yield value
@@ -25,7 +27,7 @@ module Elixir
     end
 
     def repeatedly
-      Enumerator.new Float::INFINITY do |yielder|
+      Enumerator.new INFINITY do |yielder|
         loop do
           yielder << yield
         end
@@ -40,12 +42,14 @@ module Elixir
     end
 
     def unfold tuple
-      Enumerator.new Float::INFINITY do |yielder|
+      Enumerator.new INFINITY do |yielder|
         loop do
           value, tuple = yield tuple
           yielder << value
         end
       end
     end
+
+    # TODO: The other Stream module functions.
   end
 end

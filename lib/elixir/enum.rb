@@ -15,6 +15,7 @@ module Elixir
     end
 
     def chunk collection, n, step: nil, pad: nil
+      # TODO
     end
 
     def chunk_by collection, &block
@@ -37,14 +38,22 @@ module Elixir
       collection.drop_while &block
     end
 
+    def each collection, &block
+      collection.each &block
+
+      :ok
+    end
+
     def empty? collection
       collection.empty?
     end
 
     def fetch collection, n
+      # TODO
     end
 
     def fetch! collection, n
+      # TODO
     end
 
     def filter collection, &block
@@ -52,6 +61,7 @@ module Elixir
     end
 
     def filter_map collection, filter, mapper
+      # TODO
     end
 
     def find collection, ifnone = nil, &block
@@ -59,9 +69,11 @@ module Elixir
     end
 
     def find_index collection, &block
+      # TODO
     end
 
     def find_value collection, ifnone = nil, &block
+      # TODO
     end
 
     def flat_map collection, &block
@@ -69,15 +81,19 @@ module Elixir
     end
 
     def flat_map_reduce collection, acc, &block
+      # TODO
     end
 
-    def group_by collection, dict = {}, &block
+    def group_by collection, &block
+      collection.group_by(&block).map { |k, v| [k.to_s.to_sym, v] }.to_h
     end
 
     def intersperse collection, element
+      collection.each_with_object(element).to_a.flatten 1
     end
 
     def into collection, list, transform = nil
+      # TODO
     end
 
     def join collection, joiner = ''
@@ -89,16 +105,19 @@ module Elixir
     end
 
     def map_join collection, joiner = '', &block
+      collection.map(&block).join joiner
     end
 
     def map_reduce collection, acc, &block
+      # TODO
     end
 
     def max collection
-      collection.max
+      collection.max or raise 'empty error'
     end
 
     def max_by collection, &block
+      collection.max_by &block
     end
 
     def member? collection, value
@@ -106,7 +125,7 @@ module Elixir
     end
 
     def min collection
-      collection.min
+      collection.min or raise 'empty error'
     end
 
     def min_by collection, &block
@@ -134,6 +153,7 @@ module Elixir
     end
 
     def scan collection, acc = 0, &block
+      # TODO
     end
 
     def shuffle collection
@@ -141,6 +161,7 @@ module Elixir
     end
 
     def slice collection, x, count = nil
+      # TODO
     end
 
     def sort collection, &block
@@ -148,13 +169,15 @@ module Elixir
     end
 
     def sort_by collection, mapper, sorter = nil
+      # TODO
     end
 
     def split collection, count
-      
+      # TODO
     end
 
     def split_while collection, &block
+      # TODO
     end
 
     def sum collection
@@ -166,10 +189,11 @@ module Elixir
     end
 
     def take_every collection, nth
-      collection.step by: nth
+      collection.each_slice(nth).map &:first
     end
 
     def take_while collection, &block
+      # TODO
     end
 
     def to_list collection

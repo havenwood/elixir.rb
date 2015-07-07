@@ -1,5 +1,24 @@
 # Changelog
 
-## 0.0.0 (2015-06-26)
+## 0.1.0 (2015-07-07)
 
-* Primordial ooze
+A partial implementation of the following Elixir modules:
+* Agent
+* Atom
+* Base
+* Dict
+* Enum
+* File
+* Float
+* Integer
+* List
+* OptionParser
+* Path
+* Range
+* Set
+* Stream
+* String
+* System
+* Task
+* Tuple
+* Version

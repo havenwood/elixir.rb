@@ -80,4 +80,6 @@ describe Elixir::Stream do
       assert_equal [0, 1, 1, 2, 3], @unfold.take(5)
     end
   end
+
+
 end
