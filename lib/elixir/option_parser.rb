@@ -1,5 +1,4 @@
 require 'shellwords'
-require 'strscan'
 
 module Elixir
   module OptionParser
