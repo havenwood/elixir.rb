@@ -1,5 +1,7 @@
 # Elixir.rb
 
+[![Build Status](https://travis-ci.org/havenwood/elixir.rb.svg?branch=v0.1.0)](https://travis-ci.org/havenwood/elixir.rb)
+
 The [Elixir](http://elixir-lang.org) standard library in [Ruby](https://www.ruby-lang.org)!
 
 So far there are partial implementations of the following Elixir modules:
