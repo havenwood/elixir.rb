@@ -11,7 +11,7 @@ module Elixir
     end
 
     def at collection, index, default = nil
-      collection.first(index.next)[index] || default
+      collection[index] || default
     end
 
     def chunk collection, n, step: nil, pad: nil

@@ -3,10 +3,10 @@ require 'test_helper'
 describe Elixir::Set do
   describe 'delete' do
     it 'deletes the item' do
-      set = Set.new([1, 2, 3])
-      Elixir::Set.delete(set, 2)
+      set     = Set.new([1, 2, 3])
+      new_set = Elixir::Set.delete(set, 2)
 
-      refute_includes set, 2
+      refute_includes new_set, 2
     end
   end
 
@@ -51,10 +51,10 @@ describe Elixir::Set do
 
   describe 'put' do
     it 'inserts an item' do
-      set = Set.new
-      Elixir::Set.put set, :stuff
+      set     = Set.new
+      new_set = Elixir::Set.put set, :stuff
 
-      assert_equal Set.new([:stuff]), set
+      assert_equal Set.new([:stuff]), new_set
     end
   end
 

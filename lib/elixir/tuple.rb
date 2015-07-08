@@ -3,9 +3,7 @@ module Elixir
     module_function
 
     def delete_at array, index
-      array.delete_at index
-
-      array
+      array.reject.with_index { |_, i| i == index }
     end
 
     def duplicate data, size
@@ -13,7 +11,13 @@ module Elixir
     end
 
     def insert_at array, index, value
-      array.insert index, value
+      if index.zero?
+        [value] + array
+      elsif index == array.size
+        array + [value]
+      else
+        array[0..index - 1] + [value] + array[index..-1]
+      end
     end
 
     def to_list array

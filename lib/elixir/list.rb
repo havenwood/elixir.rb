@@ -3,15 +3,11 @@ module Elixir
     module_function
 
     def delete array, item
-      array.delete item
-
-      array
+      array.reject { |x| x == item }
     end
 
     def delete_at array, index
-      array.delete_at index
-
-      array
+      array.reject.with_index { |_, i| i == index }
     end
 
     def duplicate elem, n

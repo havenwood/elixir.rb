@@ -5,6 +5,13 @@ describe Elixir::List do
     it 'returns an Array without the deleted index' do
       assert_equal [:a, :c], Elixir::List.delete_at([:a, :b, :c], 1)
     end
+
+    it 'does not modify the original Array' do
+      list = %i[a b c]
+
+      assert_equal [:a, :c], Elixir::List.delete_at(list, 1)
+      assert_equal %i[a b c], list
+    end
   end
 
   describe 'duplicate' do
