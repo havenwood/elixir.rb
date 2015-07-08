@@ -3,13 +3,31 @@ require 'test_helper'
 describe Elixir::Dict do
   describe 'delete' do
     before do
-      @list = [:a, :b, :c]
+      @list = %i[a b c]
     end
 
     it 'returns the Array without the element' do
       assert_equal [:b, :c], Elixir::Dict.delete(@list, :a)
-      assert_equal [:c], Elixir::Dict.delete(@list, :b) 
-      assert_equal [], Elixir::Dict.delete(@list, :c)
+    end
+
+    it 'does not mutate the original list' do
+      assert_equal [:b, :c], Elixir::Dict.delete(@list, :a)
+      assert_equal [:a, :b, :c], @list
+    end
+  end
+
+  describe 'drop' do
+    before do
+      @list = %i[a b c]
+    end
+
+    it 'returns the Array without the keys' do
+      assert_equal [:a], Elixir::Dict.drop(@list, [:b, :c])
+    end
+
+    it 'does not mutate the original list' do
+      assert_equal [:a], Elixir::Dict.drop(@list, [:b, :c])
+      assert_equal [:a, :b, :c], @list
     end
   end
 

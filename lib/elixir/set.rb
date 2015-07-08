@@ -3,7 +3,7 @@ module Elixir
     module_function
 
     def delete set, value
-      set.delete value
+      ::Set.new set.reject { |x| x == value }
     end
 
     def difference set1, set2
@@ -27,7 +27,7 @@ module Elixir
     end
 
     def put set, value
-      set << value
+      ::Set.new set.to_a.concat([value])
     end
 
     def size set
