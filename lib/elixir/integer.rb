@@ -11,10 +11,10 @@ module Elixir
     end
 
     def parse string
-      return :error unless string =~ /\A\d/
+      return :error unless string =~ /\A[\-\+]?\d/
 
-      if remainder_index = string =~ /\D/
-        [Integer(string[0...remainder_index]), string[remainder_index..-1]]
+      if remainder_index = string[1..-1] =~ /\D/
+        [Integer(string[0..remainder_index]), string[remainder_index.next..-1]]
       else
         [Integer(string), '']
       end

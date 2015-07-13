@@ -38,15 +38,21 @@ describe Elixir::Integer do
   end
 
   describe 'parse' do
-    it 'returns :error unless it starts with a digit' do
+    it 'returns :errror unless signed or unsigned digits' do
       assert_equal :error, Elixir::Integer.parse('x509')
+      assert_equal :error, Elixir::Integer.parse('-+509')
     end
 
-    it 'returns and Integer and empty String when digits' do
+    it 'returns an Integer and empty String when digits' do
       assert_equal [42, ''], Elixir::Integer.parse('42')
     end
 
-    it 'returns and Integer and remainder' do
+    it 'returns an Integer and emtpy String when signed digits' do
+      assert_equal [42, ''], Elixir::Integer.parse('+42')
+      assert_equal [-42, ''], Elixir::Integer.parse('-42')
+    end
+
+    it 'returns an Integer and remainder' do
       assert_equal [42, '.0'], Elixir::Integer.parse('42.0')
       assert_equal [42, 'x'], Elixir::Integer.parse('42x')
     end
