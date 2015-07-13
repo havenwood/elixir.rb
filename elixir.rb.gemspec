@@ -18,8 +18,8 @@ Gem::Specification.new do |gem|
   gem.files         = `git ls-files -z`.split("\x0").reject { |path| path.start_with? 'test' }
   gem.require_paths = ['lib']
 
-  gem.add_dependency 'base32', '~> 0.3', '>= 0.3.2'
-  gem.add_dependency 'concurrent-ruby', '~> 0.8', '>= 0.8.0'
+  gem.add_dependency 'base32', '~> 0.3.2'
+  gem.add_dependency 'concurrent-ruby', '~> 0.8.0'
 
   gem.add_development_dependency 'rake', '~> 10.4', '>= 10.4.2'
   gem.add_development_dependency 'minitest', '~> 5.7', '>= 5.7.0'
