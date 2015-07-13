@@ -40,22 +40,27 @@ module Elixir
 
     def keydelete array, key, position
       # TODO
+      raise NotImplementedError
     end
 
     def keyfind array, key, position, default = nil
       # TODO
+      raise NotImplementedError
     end
 
     def keymember? array, key, position
       # TODO
+      raise NotImplementedError
     end
 
     def keyreplace array, key, position, new_array
       # TODO
+      raise NotImplementedError
     end
 
     def keysort array, position
       # TODO
+      raise NotImplementedError
     end
 
     def last array
@@ -64,22 +69,27 @@ module Elixir
 
     def replace_at array, index, value
       # TODO
+      raise NotImplementedError
     end
 
     def to_atom char_array
       # TODO
+      raise NotImplementedError
     end
 
     def to_existing_atom char_array
       # TODO
+      raise NotImplementedError
     end
 
     def to_float char_array
       # TODO
+      raise NotImplementedError
     end
 
     def to_integer char_array
       # TODO
+      raise NotImplementedError
     end
 
     def to_string array
@@ -101,6 +111,7 @@ module Elixir
 
     def update_at array, index, &fun
       # TODO
+      raise NotImplementedError
     end
 
     def wrap obj

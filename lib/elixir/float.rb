@@ -25,10 +25,12 @@ module Elixir
 
     def to_char_list number, options = nil
       # TODO
+      raise NotImplementedError
     end
 
     def to_string float, options = nil
       # TODO
+      raise NotImplementedError
     end
   end
 end

@@ -12,6 +12,7 @@ module Elixir
 
     def chunk string, trait
       # TODO
+      raise NotImplementedError
     end
 
     def codepoints string
@@ -64,6 +65,7 @@ module Elixir
 
     def match? string, regex
       # TODO
+      raise NotImplementedError
     end
 
     def next_codepoint string
@@ -76,10 +78,12 @@ module Elixir
 
     def printable? string
       # TODO
+      raise NotImplementedError
     end
 
     def replace string, pattern, replacement, options = []
       # TODO
+      raise NotImplementedError
     end
 
     def reverse string
@@ -88,14 +92,17 @@ module Elixir
 
     def rjust string, len, padding
       # TODO
+      raise NotImplementedError
     end
 
     def rstrip string, char = ' '
       # TODO
+      raise NotImplementedError
     end
 
     def slice string, range
       # TODO
+      raise NotImplementedError
     end
 
     def split string
@@ -104,6 +111,7 @@ module Elixir
 
     def split_at string, offset
       # TODO
+      raise NotImplementedError
     end
 
     def starts_with string, prefix
@@ -112,6 +120,7 @@ module Elixir
 
     def strip string, char = nil
       # TODO
+      raise NotImplementedError
     end
 
     def to_atom string

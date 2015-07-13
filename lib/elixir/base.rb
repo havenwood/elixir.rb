@@ -78,22 +78,27 @@ module Elixir
 
     def hex_encode32 string, char_case: :upper
       # TODO
+      raise NotImplementedError
     end
 
     def hex_decode32 string, char_case: :upper
       # TODO
+      raise NotImplementedError
     end
 
     def hex_decode32! string, char_case: :upper
       # TODO
+      raise NotImplementedError
     end
 
     def url_decode64 string
       # TODO
+      raise NotImplementedError
     end
 
     def url_decode64! string
       # TODO
+      raise NotImplementedError
     end
   end
 end

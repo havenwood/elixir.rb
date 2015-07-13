@@ -16,6 +16,7 @@ module Elixir
 
     def chunk collection, n, step: nil, pad: nil
       # TODO
+      raise NotImplementedError
     end
 
     def chunk_by collection, &block
@@ -50,10 +51,12 @@ module Elixir
 
     def fetch collection, n
       # TODO
+      raise NotImplementedError
     end
 
     def fetch! collection, n
       # TODO
+      raise NotImplementedError
     end
 
     def filter collection, &block
@@ -62,6 +65,7 @@ module Elixir
 
     def filter_map collection, filter, mapper
       # TODO
+      raise NotImplementedError
     end
 
     def find collection, ifnone = nil, &block
@@ -70,10 +74,12 @@ module Elixir
 
     def find_index collection, &block
       # TODO
+      raise NotImplementedError
     end
 
     def find_value collection, ifnone = nil, &block
       # TODO
+      raise NotImplementedError
     end
 
     def flat_map collection, &block
@@ -82,6 +88,7 @@ module Elixir
 
     def flat_map_reduce collection, acc, &block
       # TODO
+      raise NotImplementedError
     end
 
     def group_by collection, &block
@@ -94,6 +101,7 @@ module Elixir
 
     def into collection, list, transform = nil
       # TODO
+      raise NotImplementedError
     end
 
     def join collection, joiner = ''
@@ -110,6 +118,7 @@ module Elixir
 
     def map_reduce collection, acc, &block
       # TODO
+      raise NotImplementedError
     end
 
     def max collection
@@ -154,6 +163,7 @@ module Elixir
 
     def scan collection, acc = 0, &block
       # TODO
+      raise NotImplementedError
     end
 
     def shuffle collection
@@ -162,6 +172,7 @@ module Elixir
 
     def slice collection, x, count = nil
       # TODO
+      raise NotImplementedError
     end
 
     def sort collection, &block
@@ -170,14 +181,17 @@ module Elixir
 
     def sort_by collection, mapper, sorter = nil
       # TODO
+      raise NotImplementedError
     end
 
     def split collection, count
       # TODO
+      raise NotImplementedError
     end
 
     def split_while collection, &block
       # TODO
+      raise NotImplementedError
     end
 
     def sum collection
@@ -194,6 +208,7 @@ module Elixir
 
     def take_while collection, &block
       # TODO
+      raise NotImplementedError
     end
 
     def to_list collection

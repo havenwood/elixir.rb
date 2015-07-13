@@ -26,6 +26,7 @@ module Elixir
 
     def cmd command, args, opts = []
       # TODO
+      raise NotImplementedError
     end
 
     def cwd
@@ -42,6 +43,7 @@ module Elixir
 
     def find_executable program
       # TODO
+      raise NotImplementedError
     end
 
     def get_env varname
