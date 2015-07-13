@@ -7,7 +7,7 @@ module Elixir
 
     module_function
 
-    def async fun
+    def async &fun
       fun.extend Concurrent::Async
       fun.init_mutex
 
@@ -21,7 +21,7 @@ module Elixir
       value
     end
 
-    def start fun
+    def start &fun
       POOL << fun
     end
 

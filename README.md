@@ -69,7 +69,7 @@ Agent.cast(agent) { |value| value + 42 }
 Agent.get(agent, &:next)
 #=> 43
 
-task = Task.async ->{ sleep 0.5; Agent.get(agent, &:itself) }
+task = Task.async { sleep 0.5; Agent.get(agent, &:itself) }
 #<Concurrent::IVar:...>
 
 Task.await(task)
