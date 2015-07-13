@@ -91,5 +91,5 @@ gem install -g --no-lock
 
 Run the tests:
 ```bash
-rake
+RUBYGEMS_GEMDEPS="-" rake
 ```
