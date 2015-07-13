@@ -26,6 +26,10 @@ So far there are partial implementations of the following Elixir modules:
 * Tuple
 * Version
 
+## Requirements
+
+Ruby 2.2+
+
 ## Installation
 
 ```bash
@@ -66,19 +70,19 @@ status, agent = Agent.start { 0 }
 Agent.cast(agent) { |value| value + 42 }
 #=> :ok
 
-Agent.get(agent, &:next)
+Agent.get agent, &:next
 #=> 43
 
-task = Task.async { sleep 0.5; Agent.get(agent, &:itself) }
+task = Task.async do
+  sleep 0.5
+
+  Agent.get agent, &:itself
+end
 #<Concurrent::IVar:...>
 
-Task.await(task)
+Task.await task
 #=> 42
 ```
-
-## Requirements
-
-Ruby 2.2+
 
 ## Development
 
